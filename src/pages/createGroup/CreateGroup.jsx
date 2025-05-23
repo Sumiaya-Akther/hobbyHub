@@ -11,7 +11,7 @@ const CreateGroup = () => {
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries())
 
-        console.log(groupData);
+       // console.log(groupData);
 
         //sent data to the server
 

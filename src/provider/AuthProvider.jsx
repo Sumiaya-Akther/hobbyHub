@@ -1,10 +1,34 @@
-import React from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
+import React, { createContext, useState } from 'react';
+import { auth } from '../firebase/firebase.config';
 
-const AuthProvider = () => {
+
+export const AuthContext = createContext();
+
+const AuthProvider = ({ children }) => {
+
+    const [user, setUser] = useState(null);
+    const [loading, setloading] = useState(true);
+
+    const handleregister = (email, password) => {
+        setloading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+
+    };
+
+
+
+
+    const userInfo = {
+       handleregister,
+       user,
+       setUser
+    }
+
     return (
-        <div>
-            
-        </div>
+         <AuthContext.Provider value={userInfo}>
+                {children}
+            </AuthContext.Provider>
     );
 };
 
