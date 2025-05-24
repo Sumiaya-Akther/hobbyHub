@@ -20,6 +20,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router": "^7.6.0",
     "react-simple-typewriter": "^5.0.1",
+    "react-tooltip": "^5.28.1",
     "sweetalert2": "^11.21.2",
     "tailwindcss": "^4.1.7"
   },
