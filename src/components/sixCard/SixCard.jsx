@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import Loading from "../../components/loading/Loading";
 import React, { useEffect, useState } from "react";
 
@@ -6,7 +7,7 @@ const SixCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/featured-groups") 
+    fetch("http://localhost:3000/featured-groups")
       .then(res => res.json())
       .then(data => {
         setGroups(data);
@@ -23,6 +24,13 @@ const SixCard = () => {
   }
 
   const handleJoin = (groupId) => {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "You Successfully Joining The Group",
+      showConfirmButton: false,
+      timer: 1500
+    });
     // join logic here (navigate or modal or API call)
     console.log("Joining group:", groupId);
   };
