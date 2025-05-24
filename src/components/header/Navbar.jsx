@@ -117,7 +117,7 @@ const Navbar = () => {
                                 <button onClick={logOut} className='btn  btn-info rounded-4xl'>LogOut</button>
 
                                 <button className="avater rounded-full" title={user?.displayName
-                                }><img className='w-8 rounded-full' src={user.photoURL} alt="" /></button>
+                                }><img className='w-8 rounded-full' src={`${user.photoURL}`} alt="" /></button>
 
                             </div>
                         ) : (
