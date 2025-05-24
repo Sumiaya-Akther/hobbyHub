@@ -7,7 +7,8 @@ const SixCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3000/featured-groups")
+    //http://localhost:3000/featured-groups
+    fetch("https://hobby-hub-server-one-tau.vercel.app/featured-groups")
       .then(res => res.json())
       .then(data => {
         setGroups(data);

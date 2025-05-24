@@ -24,7 +24,9 @@ const CreateGroup = () => {
 
         //sent data to the server
 
-        fetch('http://localhost:3000/groups', {
+        //http://localhost:3000/groups
+
+        fetch('https://hobby-hub-server-one-tau.vercel.app/groups', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

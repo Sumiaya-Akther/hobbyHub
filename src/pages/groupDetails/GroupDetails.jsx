@@ -3,10 +3,13 @@ import { useParams } from 'react-router';
 
 const GroupDetails = () => {
     const { id } = useParams();
+    console.log(id);
+    
     const [group, setGroup] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/group/${id}`)
+        //http://localhost:3000/group/${id}
+        fetch(`https://hobby-hub-server-one-tau.vercel.app/group/${id}`)
             .then((res) => res.json())
             .then((data) => setGroup(data));
     }, [id]);

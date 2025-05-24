@@ -28,7 +28,8 @@ export const router = createBrowserRouter([
             {
                 path: "/groups",
                 Component: AllGroups,
-                loader: () => fetch('http://localhost:3000/groups'),
+                //http://localhost:3000/groups
+                loader: () => fetch('https://hobby-hub-server-one-tau.vercel.app/groups'),
                 hydrateFallbackElement: <Loading></Loading>
             },
             {

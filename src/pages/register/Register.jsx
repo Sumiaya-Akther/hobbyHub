@@ -69,7 +69,8 @@ const Register = () => {
                 }
 
                 //save profile info in the db
-                fetch('http://localhost:3000/users', {
+                //http://localhost:3000/users
+                fetch('https://hobby-hub-server-one-tau.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

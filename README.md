@@ -1,12 +1,19 @@
-# React + Vite
+# HobbyHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Website:** [https://hobby-hub-32310.web.app/](https://hobby-hub-32310.web.app/)
 
-Currently, two official plugins are available:
+HobbyHub is a local hobby group organizer web application that helps users connect with like-minded people through various interest-based groups.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔍 Key Features
 
-## Expanding the ESLint configuration
+- ✅ Users can **register and log in securely** using Firebase Authentication.
+- 🧩 Allows users to **create and join hobby groups** based on personal interests.
+- 📱 **Fully responsive design**, accessible on all devices (mobile, tablet, desktop).
+- 🎨 **Modern UI design** using Tailwind CSS and daisyUI for a clean and aesthetic look.
+- 🎢 Engaging user experience with **smooth animations** and **interactive carousels**.
+- 📊 Uses **React Router** for seamless navigation without page reloads.
+- 📦 Deployed on **Firebase Hosting** for fast and reliable performance.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+
