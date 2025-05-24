@@ -9,6 +9,7 @@ import Loading from "../components/loading/Loading";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import UpdaetGroup from "../pages/updateGroup/UpdateGroup";
+import PrivateRoute from "../provider/PrivateRoute";
 
 export const router = createBrowserRouter([
 
@@ -31,15 +32,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/createGroup",
-                Component: CreateGroup,
+                element:<PrivateRoute>
+                    <CreateGroup></CreateGroup>
+                </PrivateRoute>
             },
             {
                 path: "/updategroup/:id",
-                Component: UpdaetGroup,
+                element: <PrivateRoute>
+                    <UpdaetGroup></UpdaetGroup>
+                </PrivateRoute>
             },
             {
                 path: "/myGroup",
-                Component: MyGroup,
+                element:<PrivateRoute>
+                     <MyGroup></MyGroup>
+                </PrivateRoute>
+                
             },
             {
                 path: "/login",

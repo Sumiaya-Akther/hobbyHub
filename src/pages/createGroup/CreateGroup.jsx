@@ -2,10 +2,11 @@ import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router';
+import Loading from '../../components/loading/Loading';
 
 const CreateGroup = () => {
     const { user } = useContext(AuthContext);
-    console.log(user);
+    //console.log(user);
     
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -56,6 +57,10 @@ const CreateGroup = () => {
             .finally(() => {
                 setLoading(false); 
             });
+    };
+
+     if (loading){
+        return <Loading></Loading>
     }
 
 

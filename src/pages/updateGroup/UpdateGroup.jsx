@@ -133,7 +133,7 @@ const UpdaetGroup = () => {
                 <p onClick={() => navigate('/myGroup')} className="w-25 px-1 py-2 text-center rounded-md bg-blue-900 text-xl cursor-pointer text-white">Go Back</p>
             </div>
         </div>
-            : <div className="max-w-3xl mx-auto p-6 bg-cyan-300 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 text-gray-100 space-y-5">
+            : <div className="max-w-3xl mx-auto p-6 bg-cyan-600 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 text-gray-100 space-y-5">
                 <h2 className="text-2xl font-bold mb-6 text-center text-gray-300">
                     Update {formData.name} Group
                 </h2>
