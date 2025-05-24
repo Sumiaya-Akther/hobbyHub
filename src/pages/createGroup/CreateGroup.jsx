@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router';
 
 const CreateGroup = () => {
     const { user } = useContext(AuthContext);
-    //console.log(user);
+    console.log(user);
     
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();

@@ -55,6 +55,8 @@ const Register = () => {
                 updateProfile(userCredential.user, { displayName: userName, photoURL: photo });
 
                 setUser({ ...userCredential.user, displayName: userName, photoURL: photo });
+                console.log(userCredential.user);
+                
 
                 const userProfile = {
                     userEmail,
@@ -65,7 +67,6 @@ const Register = () => {
                     lastSignInTime: userCredential.user?.metadata?.lastSignInTime,
 
                 }
-
 
                 //save profile info in the db
                 fetch('http://localhost:3000/users', {

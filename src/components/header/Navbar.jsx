@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
 
     const navigate = useNavigate();
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user);
+    
 
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -106,10 +110,28 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
-                    <button onClick={() => navigate("/login")} className="btn  btn-info rounded-4xl">Login</button>
+                    {
+                        user ? (
+                            <div className='flex gap-5'>
 
-                    <button onClick={() => navigate("/register")} className="btn  btn-secondary rounded-4xl">Register</button>
-                    <button className="btn  btn-secondary rounded-4xl">P</button>
+                                <button onClick={logOut} className='btn  btn-info rounded-4xl'>LogOut</button>
+
+                                <button className="avater rounded-full" title={user?.displayName
+                                }><img className='w-8 rounded-full' src={user.photoURL} alt="" /></button>
+
+                            </div>
+                        ) : (
+                            <div className='flex gap-5'>
+
+                                <button onClick={() => navigate("/login")} className="btn  btn-info rounded-4xl">Login</button>
+
+                                <button onClick={() => navigate("/register")} className="btn  btn-secondary rounded-4xl">Register</button>
+
+                            </div>
+
+                        )
+                    }
+
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ import CreateGroup from "../pages/createGroup/CreateGroup";
 import Loading from "../components/loading/Loading";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import UpdaetGroup from "../pages/updateGroup/UpdateGroup";
 
 export const router = createBrowserRouter([
 
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/createGroup",
                 Component: CreateGroup,
+            },
+            {
+                path: "/updategroup/:id",
+                Component: UpdaetGroup,
             },
             {
                 path: "/myGroup",
