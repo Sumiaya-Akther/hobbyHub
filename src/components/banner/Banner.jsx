@@ -21,7 +21,7 @@ const Banner = () => {
             <div className='relative'>
                 <img className='w-full h-[570px] object-cover rounded-2xl' src={bannerImg1} alt="Banner 1" />
                 <div className='absolute rounded-2xl'></div>
-                <div className='absolute bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
+                <div className='absolute bottom-40 md:bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
                     <h1 className="text-4xl font-bold">
                         Welcome to HobbyHub
                         <br />
@@ -48,7 +48,7 @@ const Banner = () => {
             <div className='relative'>
                 <img className='w-full h-[570px] object-cover rounded-2xl' src={bannerImg3} alt="Banner 2" />
                 <div className='absolute rounded-2xl'></div>
-                <div className='absolute bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
+                <div className='absolute bottom-40 md:bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
                  <h1 className="text-4xl font-bold">
                         Create Your Favourite Hobbies
                         <br />
@@ -75,7 +75,7 @@ const Banner = () => {
             <div className='relative'>
                 <img className='w-full h-[570px] object-cover rounded-2xl' src={bannerImg4} alt="Banner 3" />
                 <div className='absolute  rounded-2xl'></div>
-                <div className='absolute bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
+                <div className='absolute bottom-40 md:bottom-50  left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
                      <h1 className="text-4xl font-bold">
                         Create Your Favourite Hobbies
                         <br />
@@ -102,7 +102,7 @@ const Banner = () => {
             <div className='relative'>
                 <img className='w-full h-[570px] object-cover rounded-2xl' src={bannerImg2} alt="Banner 3" />
                 <div className='absolute  rounded-2xl'></div>
-                <div className='absolute bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
+                <div className='absolute bottom-40 md:bottom-50 left-1/2 transform -translate-x-1/2 text-center text-black px-4 space-y-4'>
                      <h1 className="text-4xl font-bold">
                         Create Your Favourite Hobbies
                         <br />
