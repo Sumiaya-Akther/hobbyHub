@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
+import Loading from "../../components/loading/Loading";
 
 
 
@@ -77,7 +78,7 @@ const MyGroup = () => {
     });
   };
 
-  if (loading) return <div className="text-center text-white">Loading...</div>;
+  if (loading) return <Loading></Loading>;
 
   return (
     <div className="max-w-6xl mx-auto bg-cyan-600 rounded-2xl p-8 text-white">
