@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
+import ThemeToggle from '../themeToggle/ThemeToggle';
 
 const Navbar = () => {
 
@@ -110,6 +111,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
+
+                    <div>
+                        <ThemeToggle></ThemeToggle>
+                    </div>
                     {
                         user ? (
                             <div className='flex gap-5'>
