@@ -130,8 +130,6 @@ const Navbar = () => {
 
                                 <button onClick={() => navigate("/login")} className="btn  btn-info rounded-4xl">Login</button>
 
-                                <button onClick={() => navigate("/register")} className="btn  btn-secondary rounded-4xl">Register</button>
-
                             </div>
 
                         )
