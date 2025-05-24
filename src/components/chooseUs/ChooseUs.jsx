@@ -30,7 +30,7 @@ const ChooseUs = () => {
             <Fade triggerOnce cascade damping={0.2} direction="up" duration={900}>
                 <h2
                     id="why-choose-us-heading"
-                    className="text-3xl font-bold mb-6"
+                    className="text-3xl md:text-4xl font-bold mb-12 text-cyan-700"
                 >
                     🌟 Why Choose HobbyHub?
                 </h2>

@@ -25,26 +25,38 @@ const SixCard = () => {
   }
 
   return (
-   <div className="my-18 px-4  text-center">
-      <h2 className="text-3xl font-bold my-10">🌟 Featured Hobby Groups</h2>
-      <div className="grid gap-6  sm:grid-cols-2 md:grid-cols-3">
-        {groups.map(group => (
-          <div key={group._id} className="p-4 border bg-gray-100 rounded-xl shadow hover:shadow-lg transition">
-            <img
-              src={group.picture}
-              alt={group.name}
-              className="w-full h-40 object-covefont-lighted-md mb-4"
-            />
-            <h3 className="text-2xl text-black font-semibold mb-1">{group.name}</h3>
-            <p className="font-semibold text-gray-600 mb-1">{group.category} | {group.location}</p>
-            <p className="font-semibold text-gray-700 mb-2">{group.description}</p>
-            <p className="font-light text-gray-500">👤 Created by: {group.userName}</p>
-            <p className="font-light text-gray-500">📅 Start Date: {new Date(group.date).toLocaleDateString()}</p>
-            <p className="font-light text-gray-500">👥 Members: {group.member}</p>
-          </div>
-        ))}
+ <div className="my-20 px-4 text-center">
+  <h2 className="text-3xl md:text-4xl font-bold mb-12 text-cyan-700">🌟 Featured Hobby Groups</h2>
+
+  <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+    {groups.map(group => (
+      <div
+        key={group._id}
+        className="bg-white border border-gray-300 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-6 text-left"
+      >
+        <img
+          src={group.picture}
+          alt={group.name}
+          className="w-full h-44 object-cover border border-gray-300 rounded-xl mb-4"
+        />
+        <h3 className="text-xl font-bold text-cyan-800 mb-1">{group.name}</h3>
+        <p className="text-sm text-gray-600 mb-1">
+          <span className="font-medium">🏷 Category:</span> {group.category}
+        </p>
+        <p className="text-sm text-gray-600 mb-1">
+          <span className="font-medium">📍 Location:</span> {group.location}
+        </p>
+        <p className="text-sm text-gray-700 italic mb-2 line-clamp-2">{group.description}</p>
+        <div className="text-sm text-gray-500 space-y-1">
+          <p>👤 <span className="font-medium">Created by:</span> {group.userName}</p>
+          <p>📅 <span className="font-medium">Start Date:</span> {new Date(group.date).toLocaleDateString()}</p>
+          <p>👥 <span className="font-medium">Members:</span> {group.member}</p>
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 

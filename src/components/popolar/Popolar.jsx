@@ -16,9 +16,9 @@ const Popolar = () => {
   ];
 
     return (
-          <div className="my-12 text-center max-w-4xl mx-auto px-4">
+          <div className="my-20 text-center max-w-4xl mx-auto px-4">
       {/* Typewriter title */}
-      <h2 className="text-3xl font-bold mb-8 min-h-[3rem]">
+      <h2 className="text-3xl md:text-4xl font-bold my-16 text-cyan-700 min-h-[3rem]">
         <Typewriter
           words={["🔥 Popular Hobby Categories"]}
           loop={1}
