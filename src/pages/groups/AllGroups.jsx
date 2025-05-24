@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLoaderData } from 'react-router';
 
 const AllGroups = () => {
     const groups = useLoaderData();
     // console.log(groups);
-
-    const [selectedGroup, setSelectedGroup] = useState(null);
-
-    const openModal = (group) => {
-        setSelectedGroup(group);
-        document.getElementById('group_modal').showModal();
-    };
 
 
     return (
@@ -30,42 +23,14 @@ const AllGroups = () => {
                     <p className="text-gray-600 mb-1"><strong>Location:</strong> {group.location}</p>
                     <p className="text-gray-600 mb-1"><strong>Date:</strong> {group.date}</p>
                     <p className="text-gray-600 mb-4"><strong>Organizer:</strong> {group.userName}</p>
+                    <Link to={`/group/${group._id}`}>
                     <button
-                        className="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition-all w-full"
-                        onClick={() => openModal(group)}
-                    >
+                        className="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition-all w-full">
                         See More
                     </button>
+                    </Link>
                 </div>
             ))}
-
-            {/* DaisyUI Modal */}
-            <dialog id="group_modal" className="modal">
-                <div className="modal-box max-w-md">
-                    {selectedGroup && (
-                        <>
-                            <h3 className="font-bold text-xl mb-2">{selectedGroup.name}</h3>
-                            <img
-                                src={selectedGroup.picture}
-                                alt={selectedGroup.name}
-                                className="w-full h-48 object-cover rounded-lg mb-3"
-                            />
-                            <p><strong>Category:</strong> {selectedGroup.category}</p>
-                            <p><strong>Description:</strong> {selectedGroup.description}</p>
-                            <p><strong>Date:</strong> {selectedGroup.date}</p>
-                            <p><strong>Location:</strong> {selectedGroup.location}</p>
-                            <p><strong>Members:</strong> {selectedGroup.member}</p>
-                            <p><strong>Organizer:</strong> {selectedGroup.userName}</p>
-                            <p><strong>Email:</strong> {selectedGroup.userEmail}</p>
-                        </>
-                    )}
-                    <div className="modal-action">
-                        <form method="dialog">
-                            <button className="btn">Close</button>
-                        </form>
-                    </div>
-                </div>
-            </dialog>
         </div>
     );
 };

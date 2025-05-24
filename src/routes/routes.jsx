@@ -10,6 +10,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import UpdaetGroup from "../pages/updateGroup/UpdateGroup";
 import PrivateRoute from "../provider/PrivateRoute";
+import GroupDetails from "../pages/groupDetails/GroupDetails";
 
 export const router = createBrowserRouter([
 
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
                 hydrateFallbackElement: <Loading></Loading>
             },
             {
-                path: "/allGroup",
+                path: "/groups",
                 Component: AllGroups,
                 loader: () => fetch('http://localhost:3000/groups'),
                 hydrateFallbackElement: <Loading></Loading>
@@ -34,6 +35,12 @@ export const router = createBrowserRouter([
                 path: "/createGroup",
                 element: <PrivateRoute>
                     <CreateGroup></CreateGroup>
+                </PrivateRoute>
+            },
+             {
+                path: "/group/:id",
+                element: <PrivateRoute>
+                    <GroupDetails></GroupDetails>
                 </PrivateRoute>
             },
             {

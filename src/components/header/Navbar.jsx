@@ -32,7 +32,7 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/allGroup"
+                                    to="/groups"
                                     className={({ isActive }) =>
                                         isActive ? "text-cyan-900 font-bold" : ""
                                     }
@@ -79,7 +79,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/allGroup"
+                                to="/groups"
                                 className={({ isActive }) =>
                                     isActive ? "text-cyan-900 font-bold" : ""
                                 }
