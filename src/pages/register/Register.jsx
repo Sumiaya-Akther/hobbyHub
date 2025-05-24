@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -13,7 +14,8 @@ const Register = () => {
 
         const form = e.target;
         const formData = new FormData(form);
-        const {email, password, ...userProfile } = Object.fromEntries(formData.entries());
+        const { userEmail, userName, photo, password, ...restFormData } = Object.fromEntries(formData.entries());
+
 
 
         // const fullname = e.target.fullName.value
@@ -21,7 +23,7 @@ const Register = () => {
         // const email = e.target.email.value
         // const password = e.target.password.value
 
-         console.log(userProfile, email, password);
+        console.log(restFormData, userEmail, password);
 
 
         if (password.length < 6) {
@@ -46,38 +48,48 @@ const Register = () => {
         }
 
 
-        handleregister(email, password)
+        handleregister(userEmail, password)
 
             .then((userCredential) => {
 
-                const currentUser = userCredential.user;
-                console.log(currentUser);
-                
-                //setUser({ ...currentUser, displayName: fullname, photoURL: photo })
-  
+                updateProfile(userCredential.user, { displayName: userName, photoURL: photo });
+
+                setUser({ ...userCredential.user, displayName: userName, photoURL: photo });
+
+                const userProfile = {
+                    userEmail,
+                    displayName: userName,
+                    photoURL: photo,
+                    ...restFormData,
+                    creationTime: userCredential.user?.metadata?.creationTime,
+                    lastSignInTime: userCredential.user?.metadata?.lastSignInTime,
+
+                }
+
+
                 //save profile info in the db
-                 fetch('http://localhost:3000/users', {
+                fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
                     },
                     body: JSON.stringify(userProfile)
-                 })
-                 .then(res => res.json())
-                 .then(data => {
-                    if (data.insertedId) {
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.insertedId) {
 
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "User Created Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
-                    navigate("/");
-                }
-                    
-                 })
+                            Swal.fire({
+                                position: "center",
+                                icon: "success",
+                                title: "User Created Successfully",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                            navigate("/");
+                        }
+
+                    })
 
             })
     }
@@ -94,7 +106,7 @@ const Register = () => {
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="text" className="block mb-2 text-sm text-black font-semibold">Full Name</label>
-                            <input type="text" name="fullName" id="name" required placeholder="John Henry" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type="text" name="userName" id="name" required placeholder="John Henry" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
                         <div>
                             <label htmlFor="photo" className="block mb-2 text-sm text-black font-semibold">User Picture</label>
@@ -102,7 +114,7 @@ const Register = () => {
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm text-black font-semibold">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
+                            <input type="email" name="userEmail" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
                         </div>
                         <div>
                             <div className="flex justify-between mb-2">

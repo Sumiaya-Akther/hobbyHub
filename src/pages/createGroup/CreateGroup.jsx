@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../provider/AuthProvider';
+import { useLocation, useNavigate } from 'react-router';
 
 const CreateGroup = () => {
-
-
+    const { user } = useContext(AuthContext);
+    //console.log(user);
+    
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
     const handleCreateGroup = e => {
         e.preventDefault();
         const form = e.target;
@@ -11,7 +17,9 @@ const CreateGroup = () => {
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries())
 
-       // console.log(groupData);
+        setLoading(true);
+
+        // console.log(groupData);
 
         //sent data to the server
 
@@ -30,12 +38,24 @@ const CreateGroup = () => {
                         icon: "success",
                         draggable: true
                     });
-                   // form.reset();
+                    form.reset();
+                    navigate(`${location.state ? location.state : "/"}`);
                 }
 
             })
+            .catch((error) => {
+                if (error) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong please try again!",
+                    });
+                }
+            })
 
-
+            .finally(() => {
+                setLoading(false); 
+            });
     }
 
 
@@ -48,13 +68,13 @@ const CreateGroup = () => {
                     {/* Group Name */}
                     <div>
                         <label className="block mb-1 font-semibold">Group Name</label>
-                        <input type="text" name='name' placeholder="Enter group name" className="input input-bordered w-full" />
+                        <input type="text" name='name' required placeholder="Enter group name" className="input input-bordered w-full" />
                     </div>
 
                     {/* Hobby Category */}
                     <div>
                         <label className="block mb-1 font-semibold">Hobby Category</label>
-                        <select name='category' className="select select-bordered w-full">
+                        <select name='category' required className="select select-bordered w-full">
                             <option>Select a Category</option>
                             <option>Drawing & Painting</option>
                             <option>Photography</option>
@@ -70,43 +90,43 @@ const CreateGroup = () => {
                     {/* Description */}
                     <div className="md:col-span-2">
                         <label className="block mb-1 font-semibold">Description</label>
-                        <textarea rows="3" name='description' placeholder="Group description" className="textarea textarea-bordered w-full" />
+                        <textarea rows="3" required name='description' placeholder="Group description" className="textarea textarea-bordered w-full" />
                     </div>
 
                     {/* Location */}
                     <div>
                         <label className="block mb-1 font-semibold">Meeting Location</label>
-                        <input name='location' type="text" placeholder="e.g. Central Park, NYC" className="input input-bordered w-full" />
+                        <input name='location' required type="text" placeholder="e.g. Central Park, NYC" className="input input-bordered w-full" />
                     </div>
 
                     {/* Max Members */}
                     <div>
                         <label className="block mb-1 font-semibold">Max Members</label>
-                        <input name='member' type="number" min="1" className="input input-bordered w-full" />
+                        <input name='member' type="number" min="1" required className="input input-bordered w-full" />
                     </div>
 
                     {/* Start Date */}
                     <div>
                         <label className="block mb-1 font-semibold">Start Date</label>
-                        <input name='date' type="date" className="input input-bordered w-full" />
+                        <input name='date' type="date" required className="input input-bordered w-full" />
                     </div>
 
                     {/* Image URL */}
                     <div>
                         <label className="block mb-1 font-semibold">Image URL</label>
-                        <input name='picture' type="url" placeholder="https://..." className="input input-bordered w-full" />
+                        <input name='picture' type="url" required placeholder="https://..." className="input input-bordered w-full" />
                     </div>
 
                     {/* User Name (Readonly) */}
                     <div>
                         <label className="block mb-1 font-semibold">User Name</label>
-                        <input name='userName' type="text" className="input input-bordered w-full bg-gray-100" />
+                        <input name='userName' required type="text" defaultValue={user?.displayName} readOnly className="input input-bordered w-full bg-gray-100" />
                     </div>
 
                     {/* User Email (Readonly) */}
                     <div>
                         <label className="block mb-1 font-semibold">User Email</label>
-                        <input name='userEmail' type="email" className="input input-bordered w-full bg-gray-100" />
+                        <input name='userEmail' required defaultValue={user?.email} readOnly  type="email" className="input input-bordered w-full bg-gray-100" />
                     </div>
 
                     {/* Submit Button */}

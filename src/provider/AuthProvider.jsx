@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth/cordova';
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase/firebase.config';
+import { GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
 
 export const AuthContext = createContext();
@@ -16,14 +17,50 @@ const AuthProvider = ({ children }) => {
 
     };
 
+     const handleLogin = (email, password) => {
+        setloading(true);
+        return signInWithEmailAndPassword(auth, email, password);
+
+    };
+
+
+    const updateUser = (updatedData) => {
+        return  updateProfile(auth.currentUser, updatedData);
+    };
+
+
+    const googleLogin = async () => {
+        const provider = new GoogleAuthProvider();
+        return signInWithPopup(auth, provider)
+      };
+
+      const logOut = () => {
+        return signOut(auth);
+    };
 
 
 
     const userInfo = {
        handleregister,
        user,
-       setUser
+       setUser,
+       handleLogin,
+       googleLogin,
+       logOut,
+       updateUser
+
     }
+
+     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+            setloading(false);
+        });
+        return () => {
+            unsubscribe();
+        }
+
+    }, []);
 
     return (
          <AuthContext.Provider value={userInfo}>
