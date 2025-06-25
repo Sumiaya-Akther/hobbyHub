@@ -36,7 +36,8 @@ const Popolar = () => {
           {categories.map(({ name, desc }, i) => (
             <span
               key={i}
-              className="px-5 py-2 bg-purple-100 text-purple-700 rounded-full shadow cursor-pointer hover:bg-purple-200 transition"
+              className="px-5 py-2 bg-purple-100 text-purple-700
+               rounded-full shadow cursor-pointer hover:bg-purple-200 transition"
               data-tooltip-id={`tooltip-${i}`}
               data-tooltip-content={desc}
             >
