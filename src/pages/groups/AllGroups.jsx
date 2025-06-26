@@ -7,11 +7,11 @@ const AllGroups = () => {
 
 
     return (
-        <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="p-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {groups.map((group) => (
                 <div
                     key={group._id}
-                    className="border border-gray-300 rounded-xl shadow-md p-4 flex flex-col justify-between"
+                    className="border border-gray-300 rounded-xl shadow-md p-4 flex flex-col mb-5 justify-between"
                 >
                     <img
                         src={group.picture}
@@ -20,7 +20,6 @@ const AllGroups = () => {
                     />
                     <h2 className="text-xl font-bold text-cyan-700 mb-1">{group.name}</h2>
                     <p className="text-gray-600 mb-1"><strong>Category:</strong> {group.category}</p>
-                    <p className="text-gray-600 mb-1"><strong>Location:</strong> {group.location}</p>
                     <p className="text-gray-600 mb-1"><strong>Date:</strong> {group.date}</p>
                     <p className="text-gray-600 mb-4"><strong>Organizer:</strong> {group.userName}</p>
                     <Link to={`/group/${group._id}`}>
