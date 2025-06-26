@@ -8,7 +8,7 @@ const Support = () => {
         
         {/* Heading */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">Need Help?</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-2">Need Help?</h1>
           <p className="text-lg">We’re here to support you in your hobby journey!</p>
         </div>
 

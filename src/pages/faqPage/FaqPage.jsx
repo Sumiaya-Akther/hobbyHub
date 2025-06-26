@@ -39,7 +39,7 @@ const FaqPage = () => {
     return (
     <section className="py-12 rounded-2xl bg-gradient-to-br from-white to-cyan-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-300">
       <div className="max-w-4xl mx-auto px-6 text-gray-800 dark:text-white">
-        <h2 className="text-4xl font-bold text-center mb-10 text-cyan-600 dark:text-cyan-300">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-cyan-600 dark:text-cyan-300">
           Frequently Asked Questions
         </h2>
 

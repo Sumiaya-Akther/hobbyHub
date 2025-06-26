@@ -4,7 +4,7 @@ const About = () => {
     return (
             <section className="min-h-screen rounded-2xl bg-gradient-to-b from-white to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-12 px-4">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-cyan-600 dark:text-cyan-300 mb-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-6">
           About HobbyHub
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-10">

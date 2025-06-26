@@ -35,7 +35,7 @@ const ChooseUs = () => {
                     🌟 Why Choose HobbyHub?
                 </h2>
 
-                <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+                <p className="max-w-2xl mx-auto mb-10">
                     HobbyHub connects people with shared passions. Whether you're into painting or hiking, find your community here!
                 </p>
 
@@ -48,7 +48,7 @@ const ChooseUs = () => {
                             <h4 className="font-semibold text-xl mb-2">
                                 {icon} {title}
                             </h4>
-                            <p className="text-sm text-gray-700">{desc}</p>
+                            <p className="text-sm">{desc}</p>
                         </div>
                     ))}
                 </div>

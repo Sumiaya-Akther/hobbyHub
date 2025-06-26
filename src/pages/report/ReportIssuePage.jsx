@@ -39,7 +39,7 @@ const ReportIssuePage = () => {
     return (
     <section className="py-12 rounded-2xl bg-gradient-to-br from-white to-cyan-100 dark:from-gray-900 dark:to-gray-800 transition-all duration-300">
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-cyan-600 dark:text-cyan-300 mb-8 text-center">Report an Issue</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-cyan-600 dark:text-cyan-300 mb-8 text-center">Report an Issue</h2>
 
         <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl space-y-6">
           {/* Name */}
