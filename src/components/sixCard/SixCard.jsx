@@ -7,8 +7,9 @@ const SixCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    //https://hobby-hub-server-one-tau.vercel.app
     //http://localhost:3000/featured-groups
-    fetch("https://hobby-hub-server-one-tau.vercel.app/featured-groups")
+    fetch("http://localhost:3000/featured-groups")
       .then(res => res.json())
       .then(data => {
         setGroups(data);
@@ -40,7 +41,7 @@ const SixCard = () => {
     <div className="my-20 px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-12 text-cyan-700">🌟 Featured Hobby Groups</h2>
 
-      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {groups.map(group => {
           const groupDate = new Date(group.date);
           const today = new Date();

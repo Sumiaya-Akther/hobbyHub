@@ -19,9 +19,10 @@ const MyGroup = () => {
     //const userEmail = user.email;
     const fetchGroups = async () => {
       try {
+        //https://hobby-hub-server-one-tau.vercel.app
           //http://localhost:3000/mygroups?email=${user.email}
         setTimeout (async()=>{
-          const res = await fetch(`https://hobby-hub-server-one-tau.vercel.app/mygroups?email=${user.email}`);
+          const res = await fetch(`http://localhost:3000/mygroups?email=${user.email}`);
         const data = await res.json();
 
         //console.log(data);

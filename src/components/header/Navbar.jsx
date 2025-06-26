@@ -8,10 +8,10 @@ const Navbar = () => {
     const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext)
     //console.log(user);
-    
+
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-300 mb-14 fixed top-0 z-50  shadow-sm">
             <div className='w-11/12 mx-auto flex justify-between'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -43,24 +43,46 @@ const Navbar = () => {
                             </li>
                             <li>
                                 <NavLink
-                                    to="/createGroup"
+                                    to="/about"
                                     className={({ isActive }) =>
                                         isActive ? "text-cyan-900 font-bold" : ""
                                     }
                                 >
-                                    Create Group
+                                    About Us
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink
-                                    to="/myGroup"
+                                    to="/contact"
                                     className={({ isActive }) =>
                                         isActive ? "text-cyan-900 font-bold" : ""
                                     }
                                 >
-                                    My Group
+                                    Contact
                                 </NavLink>
                             </li>
+                            <li>
+                                <NavLink
+                                    to="/support"
+                                    className={({ isActive }) =>
+                                        isActive ? "text-cyan-900 font-bold" : ""
+                                    }
+                                >
+                                    Support
+                                </NavLink>
+                            </li>
+                            {
+                                user ? <li>
+                                    <NavLink
+                                        to="/dashboard"
+                                        className={({ isActive }) =>
+                                            isActive ? "text-cyan-900 font-bold" : ""
+                                        }
+                                    >
+                                        Dashboard
+                                    </NavLink>
+                                </li> : <></>
+                            }
                         </ul>
                     </div>
                     <h1 className="btn btn-ghost flex items-center font-bold text-3xl">Hobby <span className='text-cyan-600'>Hub</span></h1>
@@ -90,24 +112,46 @@ const Navbar = () => {
                         </li>
                         <li>
                             <NavLink
-                                to="/createGroup"
+                                to="/about"
                                 className={({ isActive }) =>
                                     isActive ? "text-cyan-900 font-bold" : ""
                                 }
                             >
-                                Create Group
+                                About Us
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
-                                to="/myGroup"
+                                to="/contact"
                                 className={({ isActive }) =>
                                     isActive ? "text-cyan-900 font-bold" : ""
                                 }
                             >
-                                My Group
+                                Contact
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/support"
+                                className={({ isActive }) =>
+                                    isActive ? "text-cyan-900 font-bold" : ""
+                                }
+                            >
+                                Support
+                            </NavLink>
+                        </li>
+                        {
+                            user ? <li>
+                                <NavLink
+                                    to="/dashboard"
+                                    className={({ isActive }) =>
+                                        isActive ? "text-cyan-900 font-bold" : ""
+                                    }
+                                >
+                                    Dashboard
+                                </NavLink>
+                            </li> : <></>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">

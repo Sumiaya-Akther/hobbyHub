@@ -7,7 +7,6 @@ import SixCard from '../../components/sixCard/SixCard';
 
 
 const Home = () => {
-    
     return (
         <div>
             <Banner></Banner>
