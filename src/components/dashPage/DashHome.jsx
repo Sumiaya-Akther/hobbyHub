@@ -2,7 +2,7 @@ import React from 'react';
 
 const DashHome = () => {
     return (
-        <div>
+        <div className='my-2'>
             dashboard home
         </div>
     );
