@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import Lottie from 'lottie-react';
+import registerLotti from "../../assets/lotties/animation.json";
 
 const Login = () => {
      const navigate = useNavigate();
@@ -70,9 +72,15 @@ const Login = () => {
 
 
     return (
-        <div className='py-10 px-8'>
-            <div className="w-full max-w-md mx-auto p-4 rounded-md shadow sm:p-8 bg-cyan-500">
-                <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
+        <div className='flex gap-10 max-w-5xl mx-auto bg-cyan-600 rounded-2xl shadow-2xl justify-center items-center'>
+             <div className="hidden md:flex flex-col justify-between">
+                <Lottie animationData={registerLotti} loop={true}>
+
+                </Lottie>
+            </div>
+            <div className='py-10 px-8'>
+            <div className="w-full max-w-md mx-auto p-4 rounded-md sm:p-8">
+                <h2 className="mb-3 text-3xl font-semibold text-center"> Welcome Back! <br /> <span className='text-sm'>Login to your account</span></h2>
                 <p className="text-sm text-center dark:text-gray-600">Dont have account?
                     <NavLink to="/register" rel="noopener noreferrer" className="focus:underline hover:underline font-semibold">Register here</NavLink>
                 </p>
@@ -106,6 +114,7 @@ const Login = () => {
                     <button type="submit" className="w-full px-8 py-3 font-semibold bg-black text-white rounded-md dark:bg-violet-600 dark:text-gray-50">Log in</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 };
