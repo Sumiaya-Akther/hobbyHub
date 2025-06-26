@@ -85,11 +85,10 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <h1 className="btn btn-ghost flex items-center font-bold text-3xl">Hobby <span className='text-cyan-600'>Hub</span></h1>
+                    <h1 className="btn btn-ghost flex items-center font-bold text-xl md:text-3xl"><img className='w-18' src="logo.png" alt="" />  Hobby <span className='text-cyan-600'>Hub</span></h1>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-
                         <li>
                             <NavLink
                                 to="/"
@@ -163,7 +162,7 @@ const Navbar = () => {
                         user ? (
                             <div className='flex gap-5'>
 
-                                <button onClick={logOut} className='btn  btn-info rounded-4xl'>LogOut</button>
+                                <button onClick={logOut} className='btn bg-[#0092b8] rounded-4xl'>LogOut</button>
 
                                 <button className="avater rounded-full" title={user?.displayName
                                 }><img className='w-8 rounded-full' src={`${user.photoURL}`} alt="" /></button>
@@ -172,7 +171,7 @@ const Navbar = () => {
                         ) : (
                             <div className='flex gap-5'>
 
-                                <button onClick={() => navigate("/login")} className="btn  btn-info rounded-4xl">Login</button>
+                                <button onClick={() => navigate("/login")} className="btn bg-[#0092b8]  rounded-4xl">Login</button>
 
                             </div>
 

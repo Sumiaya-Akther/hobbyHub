@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import Lottie from 'lottie-react';
@@ -72,7 +72,8 @@ const Login = () => {
 
 
     return (
-        <div className='flex gap-10 max-w-5xl mx-auto bg-cyan-600 rounded-2xl shadow-2xl justify-center items-center'>
+       <div className='bg-cyan-600 max-w-5xl mx-auto  rounded-2xl shadow-2xl'>
+         <div className='flex gap-10  justify-center items-center'>
              <div className="hidden md:flex flex-col justify-between">
                 <Lottie animationData={registerLotti} loop={true}>
 
@@ -116,6 +117,8 @@ const Login = () => {
             </div>
         </div>
         </div>
+         <Link to="/"><p className='text-center pb-8 text-sm font-semibold focus:underline hover:underline'>Back To Home</p></Link>
+       </div>
     );
 };
 

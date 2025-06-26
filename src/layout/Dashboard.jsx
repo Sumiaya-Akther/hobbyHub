@@ -7,7 +7,7 @@ const Dashboard = () => {
             <div className="w-11/12 mx-auto flex flex-col md:flex-row min-h-screen ">
                 {/* Sidebar */}
                 <aside className="w-full md:w-64 bg-base-300 shadow-md md:min-h-screen">
-                    <div className="p-4 text-xl font-bold border-b border-gray-300">Dashboard
+                    <div className="p-4 text-xl font-bold flex items-center border-b border-gray-300"><img className='w-10' src="logo.png" alt="" /> Dashboard
                     </div>
                     <nav className="flex md:flex-col gap-2 p-4">
                         <NavLink
