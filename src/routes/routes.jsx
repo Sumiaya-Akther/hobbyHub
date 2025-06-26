@@ -17,6 +17,8 @@ import Support from "../pages/support/Support";
 import Dashboard from "../layout/Dashboard";
 import DashHome from "../components/dashPage/DashHome";
 import Profile from "../pages/profile/Profile";
+import ReportIssuePage from "../pages/report/ReportIssuePage";
+import FaqPage from "../pages/faqPage/FaqPage";
 
 export const router = createBrowserRouter([
 
@@ -84,6 +86,14 @@ export const router = createBrowserRouter([
             {
                 path: "/support",
                 Component: Support
+            },
+            {
+                path: "/report",
+                Component: ReportIssuePage
+            },
+            {
+                path:"/faq",
+                Component: FaqPage
             }
         ]
 
