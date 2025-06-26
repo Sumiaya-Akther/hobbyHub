@@ -74,7 +74,7 @@ const MyGroup = () => {
 
   const handleUpdate = (id) => {
     // Navigate to update form or modal (implement separately)
-    navigate(`/updategroup/${id._id}`,{
+    navigate(`/dashboard/updategroup/${id._id}`,{
        state:{massage:id}
     });
   };

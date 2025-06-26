@@ -43,7 +43,7 @@ const CreateGroup = () => {
                         draggable: true
                     });
                     form.reset();
-                    navigate(`${location.state ? location.state : "/"}`);
+                    navigate(`${location.state ? location.state : "/dashboard/myGroup"}`);
                 }
 
             })
@@ -128,13 +128,13 @@ const CreateGroup = () => {
                     {/* User Name (Readonly) */}
                     <div>
                         <label className="block mb-1 font-semibold">User Name</label>
-                        <input name='userName' required type="text" defaultValue={user?.displayName} readOnly className="input input-bordered w-full bg-gray-100" />
+                        <input name='userName' required type="text" defaultValue={user?.displayName} readOnly className="input input-bordered w-full bg-gray-800 text-white" />
                     </div>
 
                     {/* User Email (Readonly) */}
                     <div>
                         <label className="block mb-1 font-semibold">User Email</label>
-                        <input name='userEmail' required defaultValue={user?.email} readOnly  type="email" className="input input-bordered w-full bg-gray-100" />
+                        <input name='userEmail' required defaultValue={user?.email} readOnly  type="email" className="input input-bordered w-full bg-gray-800 text-white" />
                     </div>
 
                     {/* Submit Button */}

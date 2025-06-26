@@ -73,8 +73,6 @@ const UpdaetGroup = () => {
         }
     }, [location, user]);
 
-
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -93,9 +91,10 @@ const UpdaetGroup = () => {
                 cancelButtonColor: "#3085d6",
                 confirmButtonText: "Yes, update it!",
             }).then(async (result) => {
+                //https://hobby-hub-server-one-tau.vercel.app
                 //http://localhost:3000/updategroup
                 if (result.isConfirmed) {
-                    const res = await fetch("https://hobby-hub-server-one-tau.vercel.app/updategroup", {
+                    const res = await fetch("http://localhost:3000/updategroup", {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",
@@ -107,7 +106,7 @@ const UpdaetGroup = () => {
                             icon: "success",
                             title: "Group Created!",
                             text: `Your ${formData.name} group has been successfully created.`,
-                        }).then((result) => { if (result.isConfirmed) navigate('/myGroup') });
+                        }).then((result) => { if (result.isConfirmed) navigate('/dashboard/myGroup') });
                     } else {
                         const error = await res.json();
                         Swal.fire("Error", error.message || "Update failed", "error");
@@ -131,11 +130,11 @@ const UpdaetGroup = () => {
         merror ? <div>
             <p className="text-center text-2xl p-4 text-white">{merror}</p>
             <div className="w-full inline-flex items-center justify-center">
-                <p onClick={() => navigate('/myGroup')} className="w-25 px-1 py-2 text-center rounded-md bg-blue-900 text-xl cursor-pointer text-white">Go Back</p>
+                <p onClick={() => navigate('/dashboard/myGroup')} className="w-25 px-1 py-2 text-center rounded-md bg-blue-900 text-xl cursor-pointer text-white">Go Back</p>
             </div>
         </div>
             : <div className="max-w-3xl mx-auto p-6 bg-cyan-600 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 text-gray-100 space-y-5">
-                <h2 className="text-2xl font-bold mb-6 text-center text-gray-300">
+                <h2 className="text-2xl font-bold mb-6 text-center text-black">
                     Update {formData.name} Group
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -247,14 +246,14 @@ const UpdaetGroup = () => {
                             type="email"
                             value={formData.userEmail}
                             readOnly
-                            className="w-full border p-2 rounded bg-gray-100 text-gray-500"
+                            className="w-full input input-bordered border p-2 rounded bg-gray-100 text-gray-500"
                         />
                     </label>
 
                     <button
                         onClick={handleSubmit}
                         type="submit"
-                        className="w-full cursor-pointer bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+                        className="w-full cursor-pointer bg-black text-white py-2 rounded transition"
                     >
                         Update
                     </button>

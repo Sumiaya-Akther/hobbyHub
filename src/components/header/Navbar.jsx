@@ -2,12 +2,27 @@ import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import ThemeToggle from '../themeToggle/ThemeToggle';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
 
     const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext)
     //console.log(user);
+    const handleLogOut = () => {
+        logOut();
+        if (logOut) {
+
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Logout Successfully",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            navigate("/");
+        }
+    }
 
 
     return (
@@ -162,7 +177,7 @@ const Navbar = () => {
                         user ? (
                             <div className='flex gap-5'>
 
-                                <button onClick={logOut} className='btn bg-[#0092b8] rounded-4xl'>LogOut</button>
+                                <button onClick={handleLogOut} className='btn bg-[#0092b8] rounded-4xl'>LogOut</button>
 
                                 <button className="avater rounded-full" title={user?.displayName
                                 }><img className='w-8 rounded-full' src={`${user.photoURL}`} alt="" /></button>

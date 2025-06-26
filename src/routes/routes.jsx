@@ -16,6 +16,7 @@ import Contact from "../pages/contact/Contact";
 import Support from "../pages/support/Support";
 import Dashboard from "../layout/Dashboard";
 import DashHome from "../components/dashPage/DashHome";
+import Profile from "../pages/profile/Profile";
 
 export const router = createBrowserRouter([
 
@@ -56,7 +57,7 @@ export const router = createBrowserRouter([
             //         <UpdaetGroup></UpdaetGroup>
             //     </PrivateRoute>
             // },
-            
+
             // {
             //     path: "/myGroup",
             //     element: <PrivateRoute>
@@ -122,7 +123,12 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyGroup></MyGroup>
                 </PrivateRoute>
-
+            },
+            {
+                path: "profile",
+                element: <PrivateRoute>
+                    <Profile></Profile>
+                </PrivateRoute>
             }
 
         ]
