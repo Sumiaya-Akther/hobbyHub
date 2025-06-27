@@ -16,9 +16,9 @@ const Popolar = () => {
   ];
 
     return (
-          <div className="my-20 text-center max-w-4xl mx-auto px-4">
+          <div className="my-20 text-center  mx-auto px-4">
       {/* Typewriter title */}
-      <h2 className="text-3xl md:text-4xl font-bold my-16 text-cyan-700 min-h-[3rem]">
+      <h2 className="text-3xl md:text-4xl font-bold mb-10 text-cyan-700 min-h-[3rem]">
         <Typewriter
           words={["🔥 Popular Hobby Categories"]}
           loop={1}
@@ -29,6 +29,10 @@ const Popolar = () => {
           delaySpeed={2000}
         />
       </h2>
+       <p className="text-center max-w-2xl mx-auto mb-10">
+        Make your free time more meaningful.
+Join a hobby group and discover people who feel like home.
+      </p>
 
       {/* Categories with Slide animation and tooltip */}
       <div className="flex flex-wrap justify-center gap-4">
@@ -36,7 +40,7 @@ const Popolar = () => {
           {categories.map(({ name, desc }, i) => (
             <span
               key={i}
-              className="px-5 py-2 bg-purple-100 text-purple-700
+              className="px-6 py-4 bg-purple-100 text-purple-700
                rounded-full shadow cursor-pointer hover:bg-purple-200 transition"
               data-tooltip-id={`tooltip-${i}`}
               data-tooltip-content={desc}

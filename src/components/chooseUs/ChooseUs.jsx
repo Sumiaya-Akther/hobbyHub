@@ -24,7 +24,7 @@ const ChooseUs = () => {
     return (
         <section
             aria-labelledby="why-choose-us-heading"
-            className="my-12 px-4 text-center max-w-5xl mx-auto"
+            className="my-20 px-4 text-center mx-auto"
         >
             {/* Fade wrapper with cascade to animate children one by one */}
             <Fade triggerOnce cascade damping={0.2} direction="up" duration={900}>
@@ -43,7 +43,7 @@ const ChooseUs = () => {
                     {features.map(({ icon, title, desc }) => (
                         <div
                             key={title}
-                            className="p-6 border rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                            className="p-8 border rounded-lg shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
                         >
                             <h4 className="font-semibold text-xl mb-2">
                                 {icon} {title}

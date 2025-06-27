@@ -19,6 +19,7 @@ import DashHome from "../components/dashPage/DashHome";
 import Profile from "../pages/profile/Profile";
 import ReportIssuePage from "../pages/report/ReportIssuePage";
 import FaqPage from "../pages/faqPage/FaqPage";
+import AllGroup from "../pages/groups/allGroups/AllGroup";
 
 export const router = createBrowserRouter([
 
@@ -33,40 +34,30 @@ export const router = createBrowserRouter([
                 Component: Home,
                 hydrateFallbackElement: <Loading></Loading>
             },
-            {
-                path: "/groups",
-                Component: AllGroups,
-                //https://hobby-hub-server-one-tau.vercel.app
-                //http://localhost:3000/groups
-                loader: () => fetch('http://localhost:3000/groups'),
-                hydrateFallbackElement: <Loading></Loading>
-            },
+
+
             // {
-            //     path: "/createGroup",
-            //     element: <PrivateRoute>
-            //         <CreateGroup></CreateGroup>
-            //     </PrivateRoute>
+            //     path: "/groups",
+            //     Component: AllGroups,
+            //     //https://hobby-hub-server-one-tau.vercel.app
+            //     //http://localhost:3000/groups
+            //     loader: () => fetch('http://localhost:3000/groups'),
+            //     hydrateFallbackElement: <Loading></Loading>
             // },
+
+        {
+            path: "/groups",
+             Component: AllGroup,
+             hydrateFallbackElement: <Loading></Loading>
+         },
+
             {
                 path: "/group/:id",
                 element: <PrivateRoute>
                     <GroupDetails></GroupDetails>
                 </PrivateRoute>
             },
-            // {
-            //     path: "/updategroup/:id",
-            //     element: <PrivateRoute>
-            //         <UpdaetGroup></UpdaetGroup>
-            //     </PrivateRoute>
-            // },
 
-            // {
-            //     path: "/myGroup",
-            //     element: <PrivateRoute>
-            //         <MyGroup></MyGroup>
-            //     </PrivateRoute>
-
-            // },
             {
                 path: "/login",
                 Component: Login

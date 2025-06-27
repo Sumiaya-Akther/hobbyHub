@@ -5,6 +5,10 @@ const Review = () => {
 <section className="py-1 dark:bg-gray-800 transition">
   <div className="my-20 px-4 text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-12 text-cyan-700">🌟 What Users Say</h2>
+     <p className="text-center max-w-2xl mx-auto mb-10">
+       Browse a wide range of hobby-based groups — from photography and fishing to art and beyond.
+
+      </p>
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
       <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
         <p className="text-gray-700 dark:text-gray-300">“HobbyHub helped me connect with a local painting group. Now we meet weekly!”</p>

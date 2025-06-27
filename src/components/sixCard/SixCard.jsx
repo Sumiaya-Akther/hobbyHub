@@ -40,7 +40,10 @@ const SixCard = () => {
   return (
     <div className="my-20 px-4 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-12 text-cyan-700">🌟 Featured Hobby Groups</h2>
-
+        <p className="text-center max-w-2xl mx-auto mb-10">
+        Hobbies become more meaningful when shared with others.
+Find your tribe and grow together through shared passions.
+      </p>
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {groups.map(group => {
           const groupDate = new Date(group.date);
