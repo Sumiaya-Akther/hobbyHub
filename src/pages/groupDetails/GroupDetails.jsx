@@ -10,7 +10,7 @@ const GroupDetails = () => {
     useEffect(() => {
         //https://hobby-hub-server-one-tau.vercel.app
         //http://localhost:3000/group/${id}
-        fetch(`http://localhost:3000/group/${id}`)
+        fetch(`https://hobby-hub-server-one-tau.vercel.app/group/${id}`)
             .then((res) => res.json())
             .then((data) => setGroup(data));
     }, [id]);

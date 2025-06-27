@@ -35,12 +35,12 @@ Join a hobby group and discover people who feel like home.
       </p>
 
       {/* Categories with Slide animation and tooltip */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap mb-8 justify-center gap-4">
         <Slide cascade direction="up" triggerOnce damping={0.3} duration={600}>
           {categories.map(({ name, desc }, i) => (
             <span
               key={i}
-              className="px-6 py-4 bg-purple-100 text-purple-700
+              className="px-6 py-4 mb-5 bg-purple-100 text-purple-700
                rounded-full shadow cursor-pointer hover:bg-purple-200 transition"
               data-tooltip-id={`tooltip-${i}`}
               data-tooltip-content={desc}

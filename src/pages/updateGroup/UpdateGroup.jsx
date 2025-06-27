@@ -94,7 +94,7 @@ const UpdaetGroup = () => {
                 //https://hobby-hub-server-one-tau.vercel.app
                 //http://localhost:3000/updategroup
                 if (result.isConfirmed) {
-                    const res = await fetch("http://localhost:3000/updategroup", {
+                    const res = await fetch("https://hobby-hub-server-one-tau.vercel.app/updategroup", {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json",

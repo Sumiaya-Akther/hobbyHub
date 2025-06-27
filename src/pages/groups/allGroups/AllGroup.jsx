@@ -8,9 +8,9 @@ const AllGroup = () => {
   const [sortBy, setSortBy] = useState('date');     // 'date' or 'name'
   const [sortOrder, setSortOrder] = useState('desc');     // 'asc' or 'desc'
 
-  /* ❶ মাত্র একবার সব ডেটা এনে রাখি */
+
   useEffect(() => {
-    fetch('http://localhost:3000/groups')
+    fetch('https://hobby-hub-server-one-tau.vercel.app/groups')
       .then(r => r.json())
       .then(d => { setGroups(d); setLoading(false); })
       .catch(e => { console.error(e); setLoading(false); });

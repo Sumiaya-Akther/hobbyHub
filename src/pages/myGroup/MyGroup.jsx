@@ -22,7 +22,7 @@ const MyGroup = () => {
         //https://hobby-hub-server-one-tau.vercel.app
           //http://localhost:3000/mygroups?email=${user.email}
         setTimeout (async()=>{
-          const res = await fetch(`http://localhost:3000/mygroups?email=${user.email}`);
+          const res = await fetch(`https://hobby-hub-server-one-tau.vercel.app/mygroups?email=${user.email}`);
         const data = await res.json();
 
         //console.log(data);
@@ -53,7 +53,8 @@ const MyGroup = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:3000/deletegroups/${id}`, {
+          //http://localhost:3000
+          const res = await fetch(`https://hobby-hub-server-one-tau.vercel.app/deletegroups/${id}`, {
             method: "DELETE",
           });
 

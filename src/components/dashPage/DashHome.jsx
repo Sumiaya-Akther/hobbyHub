@@ -13,8 +13,8 @@ const DashHome = () => {
  useEffect(() => {
     const loadCounts = async () => {
       const [all, mine] = await Promise.all([
-        fetch("http://localhost:3000/groups/count").then(r => r.json()),
-        fetch(`http://localhost:3000/mygroups/count?email=${user.email}`).then(r => r.json()),
+        fetch("https://hobby-hub-server-one-tau.vercel.app/groups/count").then(r => r.json()),
+        fetch(`https://hobby-hub-server-one-tau.vercel.app/mygroups/count?email=${user.email}`).then(r => r.json()),
       ]);
       setStats({ total: all.count, mine: mine.count });
     };
